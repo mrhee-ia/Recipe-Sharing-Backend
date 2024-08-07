@@ -1,0 +1,3 @@
+# Recipe Sharing Website
+
+This is my first attempt in trying to make a decent project after and/or during my study of django python; learning backend development. Could be messy and incomplete. The purpose of this website is to offer users a vibrant online community where food enthusiasts can share and discover recipes from around the world. Users can post their favorite recipes with detailed instructions, images, and videos, while also exploring a diverse collection of dishes. Users can engage with others in real-time by liking, commenting, and replying. At the same time, creating a personalized profile to showcase their culinary creations and be able to connect with fellow cooks all around the world.
