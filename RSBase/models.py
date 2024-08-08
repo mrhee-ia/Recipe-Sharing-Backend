@@ -5,6 +5,30 @@ from django.contrib.auth.models import AbstractUser
 
 
 
+# Recipe Category choices
+CATEGORY_CHOICES = [
+    ('breakfast', 'Breakfast'),
+    ('lunch', 'Lunch'),
+    ('dinner', 'Dinner'),
+    ('appetizer', 'Appetizer'),
+    ('salad', 'Salad'),
+    ('side-dish', 'Side-Dish'),
+    ('baked goods', 'Baked Goods'),
+    ('dessert', 'Dessert'),
+    ('snack', 'Snack'),
+    ('soup', 'Soup'),
+    ('vegetarian', 'Vegetarian'),
+    ('fried', 'Fried'),
+    ('bread', 'Bread'),
+    ('seafood', 'Seafood'),
+    ('pasta', 'Pasta'),
+    ('cookies', 'Cookies'),
+    ('ice cream', 'Ice Cream'),
+    ('others', 'Others'),
+]
+
+
+
 class User(AbstractUser):   
     # using built-in User but modified
     username = models.CharField(max_length=60, unique=True, null=False)
@@ -31,6 +55,7 @@ class Recipe(models.Model):
     title = models.CharField(max_length=225, null=False)
     description = models.TextField(null=False)
     rmedia = models.FileField(upload_to='recipe_media/', null=True, blank=True) # for both vid and img
+    category = models.CharField(max_length=60, choices=CATEGORY_CHOICES, default='others')
     ingredients = models.TextField(null=False)
     created_at = models.DateTimeField(auto_now_add=True)
     
