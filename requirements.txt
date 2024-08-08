@@ -1,0 +1,23 @@
+asciidoc @ file:///private/tmp/asciidoc-20240209-25707-3a0ck3/asciidoc-10.2.0
+certifi @ file:///private/tmp/python-certifi-20240209-44694-o9ng0c/certifi-2024.2.2
+charset-normalizer @ file:///private/tmp/python-charset-normalizer-20240209-44898-mparta/charset-normalizer-3.3.2
+docutils @ file:///private/tmp/docutils-20240209-43184-qoonvq/docutils-0.20.1
+editables @ file:///private/tmp/python-hatchling--editables-20240208-44127-r9cufr/editables-0.5
+flit_core @ file:///private/tmp/python-flit-core-20240209-43253-8vdtsq/flit_core-3.9.0
+hatchling @ file:///private/tmp/python-hatchling-20240209-44127-f2851k/hatchling-1.21.1
+idna @ file:///private/tmp/python-idna-20240209-45099-dqwroe/idna-3.6
+Jinja2 @ file:///private/tmp/python-jinja-20240209-44494-9gbusi/Jinja2-3.1.3
+MarkupSafe @ file:///private/tmp/python-markupsafe-20240209-44283-rw6dxq/MarkupSafe-2.1.5
+meson==1.3.2
+packaging @ file:///private/tmp/python-packaging-20240209-43323-8gpupq/packaging-23.2
+pathspec @ file:///private/tmp/python-pathspec-20240209-43389-z5321/pathspec-0.12.1
+pluggy @ file:///private/tmp/python-pluggy-20240209-43727-knb5td/pluggy-1.4.0
+Pygments @ file:///private/tmp/pygments-20240209-44210-shcjpl/pygments-2.17.2
+requests @ file:///private/tmp/python-requests-20240209-45234-n96huy/requests-2.31.0
+setuptools @ file:///private/tmp/python-setuptools-20240224-35960-95xx2c/setuptools-69.1.1
+setuptools-scm @ file:///private/tmp/python-setuptools-scm-20240209-43526-5ic6ro/setuptools-scm-8.0.4
+tabulate @ file:///private/tmp/python-tabulate-20240209-45434-1qzmxi/tabulate-0.9.0
+trove-classifiers @ file:///private/tmp/python-trove-classifiers-20240209-43927-xa6c3p/trove-classifiers-2024.1.31
+typing_extensions @ file:///private/tmp/python-typing-extensions-20240209-43458-5vrjpw/typing_extensions-4.9.0
+urllib3 @ file:///private/tmp/python-urllib3-20240209-45166-5kbf77/urllib3-2.2.0
+wheel @ file:///usr/local/Cellar/python%403.12/3.12.2_1/libexec/wheel-0.42.0-py3-none-any.whl#sha256=5f1ca525bef7466225922019d72cb06a9e91cd3ff807ddd4be1acb84655e5107

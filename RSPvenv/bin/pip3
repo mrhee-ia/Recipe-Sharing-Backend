@@ -1,4 +1,6 @@
-#!/Volumes/Cristina/Programming/RecipeSharingProject/RSPvenv/bin/python3.12
+#!/bin/sh
+'''exec' "/Volumes/Cristina/Programming/Personal Projects/RecipeSharingProject/RSPvenv/bin/python3.12" "$0" "$@"
+' '''
 # -*- coding: utf-8 -*-
 import re
 import sys
