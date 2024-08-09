@@ -1,7 +1,7 @@
 from django.db import models
 
 from django_countries.fields import CountryField
-from django.contrib.auth.models import AbstractUser
+from django.contrib.auth.models import AbstractUser, Group, Permission
 
 
 
@@ -43,6 +43,10 @@ class User(AbstractUser):
     bio = models.TextField(max_length=101, null=True, blank=True)
     created_at = models.DateTimeField(auto_now_add=True)
     
+    # Avoiding conflicts by adding unique related_name arguments
+    groups = models.ManyToManyField(Group, related_name='custom_user_groups')
+    user_permissions = models.ManyToManyField(Permission, related_name='custom_user_permissions')
+    
     REQUIRED_FIELDS = []
     
     def __str__(self):
@@ -54,8 +58,8 @@ class Recipe(models.Model):
     recipe_user = models.ForeignKey(User, related_name="recipes", on_delete=models.CASCADE)
     title = models.CharField(max_length=225, null=False)
     description = models.TextField(null=False)
-    rmedia = models.FileField(upload_to='recipe_media/', null=True, blank=True) # for both vid and img
     category = models.CharField(max_length=60, choices=CATEGORY_CHOICES, default='others')
+    rmedia = models.FileField(upload_to='recipe_media/', null=True, blank=True) # for both vid and img
     ingredients = models.TextField(null=False)
     created_at = models.DateTimeField(auto_now_add=True)
     
@@ -91,8 +95,8 @@ class Like(models.Model):
     
 
 class Comment(models.Model):
-    comment_recipe = models.ForeignKey(Recipe, related_name="comments-recipe", on_delete=models.CASCADE)
-    comment_user = models.ForeignKey(User, related_name="comments-user", on_delete=models.CASCADE)
+    comment_recipe = models.ForeignKey(Recipe, related_name="comments_recipe", on_delete=models.CASCADE)
+    comment_user = models.ForeignKey(User, related_name="comments_user", on_delete=models.CASCADE)
     comment = models.TextField(null=False)
     parent = models.ForeignKey('self', null=True, blank=True, related_name="replies", on_delete=models.CASCADE)
     created_at = models.DateTimeField(auto_now_add=True)
