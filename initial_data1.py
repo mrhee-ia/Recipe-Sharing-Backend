@@ -6,7 +6,7 @@ sys.path.append('/Volumes/Cristina/Programming/Personal Projects/RecipeSharingPr
 os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'RSProject.settings')
 django.setup()
 
-from RSBase.models import User, Recipe, Procedure
+from RSBase.models import User, Recipe
 
 # Fetch or create a User instance
 user = User.objects.get(username='blabberbast')

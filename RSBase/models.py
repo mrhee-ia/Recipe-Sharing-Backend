@@ -49,6 +49,7 @@ class User(AbstractUser):
     
     REQUIRED_FIELDS = []
     
+    
     def __str__(self):
         return self.username
 
@@ -62,6 +63,7 @@ class Recipe(models.Model):
     rmedia = models.FileField(upload_to='recipe_media/', null=True, blank=True) # for both vid and img
     ingredients = models.TextField(null=False)
     created_at = models.DateTimeField(auto_now_add=True)
+    
     
     def __str__(self):
         return self.title
@@ -79,8 +81,19 @@ class Procedure(models.Model):
         ordering = ['step_order']
         unique_together = ['procedure_recipe', 'step_order']
     
+    
     def __str__(self):
-        return f"{self.recipe.title} - {self.name}"
+        return f"{self.procedure_recipe.title} - {self.name}"
+    
+    
+    def save(self, *args, **kwargs):
+        if not self.step_order:  # if step_order wasn't set
+            last_step = Procedure.objects.filter(procedure_recipe=self.procedure_recipe).order_by('step_order').last()  # get the highest current step_order of this recipe
+            if last_step:
+                self.step_order = last_step.step_order + 1  # and then add 1
+            else:
+                self.step_order = 1  # if no steps exist, starts at 1
+        super(Procedure, self).save(*args, **kwargs)
 
 
 
@@ -100,6 +113,7 @@ class Comment(models.Model):
     comment = models.TextField(null=False)
     parent = models.ForeignKey('self', null=True, blank=True, related_name="replies", on_delete=models.CASCADE)
     created_at = models.DateTimeField(auto_now_add=True)
+    
     
     def __str__(self):
         return self.comment
